@@ -2,10 +2,9 @@
 
 #required packages
 #sudo pip install --upgrade pip
-pip install empy
 
 pip install catkin_pkg
-#pip install empy
+pip install empy
 pip install pyyaml
 pip install rospkg
 

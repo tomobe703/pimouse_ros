@@ -1,5 +1,9 @@
 sudo: required
-dist: xenial
+dist: trusty
+
+before_install:
+  - sudo apt-get update
+
 
 script:
   - bash -xve ./test/travis_ros_install.bash
