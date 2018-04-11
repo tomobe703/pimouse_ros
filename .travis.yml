@@ -3,7 +3,10 @@ dist: trusty
 
 before_install:
   - sudo apt-get update
-
+  - sudo pip install catkin_pkg
+  - sudo pip install empy
+  - sudo pip install pyyaml
+  - sudo pip install rospkg
 
 script:
   - bash -xve ./test/travis_ros_install.bash
