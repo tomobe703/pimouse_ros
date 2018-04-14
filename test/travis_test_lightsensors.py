@@ -16,12 +16,12 @@ class LightSensorTest(unittest.TestCase):
 		
 	def check_values(self,lf,ls,rs,rf):
 		vs=self.values
-		self.asserEquel(vs.left_forword,lf, "different value: left_forword")
-		self.asserEquel(vs.left_side,ls, "different value: left_side")
-		self.asserEquel(vs.right_side,rs, "different value: right_side")
-		self.asserEquel(vs.right_forword,rf, "different value: right_forword")
-		self.asserEquel(vs.sum_all,lf+ls+rs+rf, "different value: sum_all")
-		self.asserEquel(vs.sum_forword,lf+rf, "different value: sum_forword")
+		self.assertEquel(vs.left_forword,lf, "different value: left_forword")
+		self.assertEquel(vs.left_side,ls, "different value: left_side")
+		self.assertEquel(vs.right_side,rs, "different value: right_side")
+		self.assertEquel(vs.right_forword,rf, "different value: right_forword")
+		self.assertEquel(vs.sum_all,lf+ls+rs+rf, "different value: sum_all")
+		self.assertEquel(vs.sum_forword,lf+rf, "different value: sum_forword")
 	def test_node_exist(self):
 		nodes=rosnode.get_node_names()
 		self.assertIn('/lightsensor', nodes, "node does not exost")
