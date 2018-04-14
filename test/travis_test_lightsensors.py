@@ -3,7 +3,7 @@
 import unittest, rostest
 import rosnode, rospy
 import time
-form pimouse_ros.msg import LightSensorValues
+from pimouse_ros.msg import LightSensorValues
 
 class LightSensorTest(unittest.TestCase):
 	def setup(self):
@@ -11,7 +11,7 @@ class LightSensorTest(unittest.TestCase):
 		rospy.Subscriber('/lightsensors', LightSensorValues, self.callback)
 		self.values=LightSensorValues()
 	def callback(self,data):
-		self.count= +=1
+		self.count +=1
 		self.values=data
 		
 	def check_values(self,lf,ls,rs,rf):
@@ -43,6 +43,6 @@ class LightSensorTest(unittest.TestCase):
 
 if __name__ == '__main__':
 	time.sleep(3)
-	rospy.init_node("travis_test_lightsensors')
+	rospy.init_node('travis_test_lightsensors')
 	rostest.rosrun('pimouse_ros', 'travis_test_lightsensors', LightsensorTest)
 
