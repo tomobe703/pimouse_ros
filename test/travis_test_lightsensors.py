@@ -24,7 +24,7 @@ class LightSensorTest(unittest.TestCase):
 		self.assertEquel(vs.sum_forword,lf+rf, "different value: sum_forword")
 	def test_node_exist(self):
 		nodes=rosnode.get_node_names()
-		self.assertIn('/lightsensor', nodes, "node does not exost")
+		self.assertIn('/lightsensors', nodes, "node does not exost")
 	def test_get_value(self):
 		rospy.set_param('lightsensor_freq', 10)
 		time.sleep(2)
@@ -37,12 +37,12 @@ class LightSensorTest(unittest.TestCase):
 		rospy.set_param('lightsensors_freq',1)
 		time.sleep(2)
 		c_prev=self.count
-		time_sleep(3)
+		time.sleep(3)
 		self.assertTrue(self.count < c_prev + 4, "freq does not change")
 		self.assertFalse(self.count == c_prev, "subscriber is stopped")
 
 if __name__ == '__main__':
 	time.sleep(3)
 	rospy.init_node("travis_test_lightsensors')
-	rostest.rosrun('pimouse_ros', 'travis_test_lightsensors', LightSensorTest)
+	rostest.rosrun('pimouse_ros', 'travis_test_lightsensors', LightsensorTest)
 
