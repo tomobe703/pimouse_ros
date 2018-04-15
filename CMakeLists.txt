@@ -10,7 +10,8 @@ project(pimouse_ros)
 find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
-  message_generation #追加
+  std_srvs
+  message_generation
 )
 
 ## System dependencies are found with CMake's conventions
@@ -105,7 +106,7 @@ generate_messages(
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES pimouse_ros
-  CATKIN_DEPENDS rospy std_msgs message_runtime # add message runtime
+  CATKIN_DEPENDS rospy std_msgs std_srvs message_runtime # add std_srvs
 #  DEPENDS system_lib
 )
 
